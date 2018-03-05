@@ -1,4 +1,4 @@
-package factory;
+package simple_factory;
 
 public class ProductA implements IProduct {
     public ProductA() {
