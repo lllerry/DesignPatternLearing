@@ -1,9 +1,10 @@
 package factory_method;
 
+
 public class AndroidFactory extends AbsFactory {
 
     @Override
-    IProduct createProduct() {
+    protected IProduct createProduct() {
         return new AndroidProduct();
     }
 }

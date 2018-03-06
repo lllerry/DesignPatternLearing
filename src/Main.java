@@ -1,8 +1,12 @@
+import abstract_factory.IButton;
+import abstract_factory.ITextView;
+import abstract_factory.ImageStyleFactory;
 import factory_method.AbsFactory;
 import factory_method.AndroidFactory;
 import factory_method.IOSFactory;
 import org.junit.Test;
 import simple_factory.IProduct;
+import simple_factory.Product_Optimize;
 import simple_factory.SimpleFactory;
 
 public class Main {
@@ -15,10 +19,10 @@ public class Main {
         AbsFactory factory;
 
         factory = new AndroidFactory();
-        factory.operate();
+        factory.draw();
 
         factory = new IOSFactory();
-        factory.operate();
+        factory.draw();
     }
 
     /**
@@ -30,4 +34,23 @@ public class Main {
 
         IProduct product_2 = SimpleFactory.create(2);
     }
+
+    /**
+     * 抽象工厂模式
+     */
+    @Test
+    public void abstract_factory() {
+        ImageStyleFactory imageStyleFactory = new ImageStyleFactory();
+        IButton button = imageStyleFactory.createButton();
+        ITextView textView = imageStyleFactory.createTextView();
+    }
+
+    /**
+     * 优化过的简单工厂模式
+     */
+    @Test
+    public void simple_factory_optimize() {
+        Product_Optimize.create(1).display();
+    }
+
 }

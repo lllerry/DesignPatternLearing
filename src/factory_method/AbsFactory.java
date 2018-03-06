@@ -2,9 +2,9 @@ package factory_method;
 
 public abstract class AbsFactory {
 
-    abstract IProduct createProduct();
+    protected abstract IProduct createProduct();
 
-    public void operate() {
+    public void draw() {
         IProduct product = createProduct();
         product.draw();
     }
