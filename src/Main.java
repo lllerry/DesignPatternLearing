@@ -1,6 +1,9 @@
 import abstract_factory.IButton;
 import abstract_factory.ITextView;
 import abstract_factory.ImageStyleFactory;
+import builder.ConcreteBuilder;
+import builder.Director;
+import builder.Product;
 import factory_method.AbsFactory;
 import factory_method.AndroidFactory;
 import factory_method.IOSFactory;
@@ -53,4 +56,13 @@ public class Main {
         Product_Optimize.create(1).display();
     }
 
+    /**
+     * 初级建造者模式
+     */
+    @Test
+    public void builder_primary() {
+        ConcreteBuilder concreteBuilder = new ConcreteBuilder();
+        Director director = new Director(concreteBuilder);
+        Product product = director.construct();
+    }
 }
