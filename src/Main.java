@@ -4,6 +4,7 @@ import abstract_factory.ImageStyleFactory;
 import builder.ConcreteBuilder;
 import builder.Director;
 import builder.Product;
+import builder.noodle_demo.Noodle;
 import factory_method.AbsFactory;
 import factory_method.AndroidFactory;
 import factory_method.IOSFactory;
@@ -64,5 +65,18 @@ public class Main {
         ConcreteBuilder concreteBuilder = new ConcreteBuilder();
         Director director = new Director(concreteBuilder);
         Product product = director.construct();
+    }
+
+    /**
+     * 进阶建造者模式
+     */
+    @Test
+    public void builder_advanced() {
+        Noodle noodle = new Noodle.Builder()
+                .addChili("chili")
+                .addPeanut("peanut")
+                .addSalt("salt")
+                .build();
+
     }
 }
