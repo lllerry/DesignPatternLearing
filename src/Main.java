@@ -77,6 +77,13 @@ public class Main {
                 .addPeanut("peanut")
                 .addSalt("salt")
                 .build();
+    }
+
+    /**
+     * 单例模式
+     */
+    @Test
+    public void singleton() {
 
     }
 }
