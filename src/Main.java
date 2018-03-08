@@ -9,9 +9,13 @@ import factory_method.AbsFactory;
 import factory_method.AndroidFactory;
 import factory_method.IOSFactory;
 import org.junit.Test;
+import prototype.ConcretePrototype;
+import prototype.IPrototype;
 import simple_factory.IProduct;
 import simple_factory.Product_Optimize;
 import simple_factory.SimpleFactory;
+import singleton.ActivityManager;
+import singleton.TaskManager;
 
 public class Main {
 
@@ -84,6 +88,20 @@ public class Main {
      */
     @Test
     public void singleton() {
+        ActivityManager activityManager = ActivityManager.getInstance();
+        TaskManager taskManager = TaskManager.getInstance();
+    }
+
+    /**
+     * 通用原型模式
+     */
+    @Test
+    public void prototype_common() {
+        IPrototype concretePrototype = new ConcretePrototype();
+        IPrototype prototype = concretePrototype.clone();
+    }
+
+    public void prototype_java() {
 
     }
 }

@@ -1,6 +1,5 @@
 package singleton;
 
-import org.omg.CORBA.PUBLIC_MEMBER;
 
 /**
  * 任务管理器 整个application 只有这一个
